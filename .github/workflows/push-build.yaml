@@ -40,6 +40,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - name: install node-pre-gyp
+        if: runner.os == 'macOS' 
+        run: npm --build-from-source install node-pre-gyp
+
       - name: Install dependencies
         run: pnpm install
 
