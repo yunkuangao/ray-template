@@ -4,7 +4,7 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 
-// mock-data-1704855865363.js
+// mock-data-1715216616735.js
 import { transformMockData } from "vite-plugin-mock-dev-server";
 
 // mock/demo/person.mock.ts
@@ -85,7 +85,7 @@ var getPersonList = defineMock({
   }
 });
 
-// mock-data-1704855865363.js
+// mock-data-1715216616735.js
 var exporters = [person_mock_exports];
 var mockList = exporters.map((raw) => {
   let mockConfig;
@@ -94,12 +94,12 @@ var mockList = exporters.map((raw) => {
   } else {
     mockConfig = [];
     Object.keys(raw || {}).forEach((key) => {
-      isArray(raw[key]) ? mockConfig.push(...raw[key]) : mockConfig.push(raw[key]);
+      Array.isArray(raw[key]) ? mockConfig.push(...raw[key]) : mockConfig.push(raw[key]);
     });
   }
   return mockConfig;
 });
-var mock_data_1704855865363_default = transformMockData(mockList);
+var mock_data_1715216616735_default = transformMockData(mockList);
 export {
-  mock_data_1704855865363_default as default
+  mock_data_1715216616735_default as default
 };
